@@ -1,0 +1,6 @@
+info.txt
+.env
+.config
+venv/
+__pycache__
+task.md
