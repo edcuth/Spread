@@ -28,11 +28,12 @@ def cancel_order(order:str):
 def process_transaction(buy_instrument:str, buy_size:int, buy_price:float, 
                         sell_instrument:str, sell_size:int, sell_price:float):
     buy_order = process_order(buy_instrument, "buy", buy_size, buy_price)
-    if buy_order["order"]["status"] != "NEW":
+    if buy_order["order"]["status"] not in ["PENDING_NEW", "FILLED"]:
         raise errors.ProcessOrderError(buy_order)
     sell_order = process_order(sell_instrument, "sell", sell_size, sell_price)
-    if sell_order["order"]["status"] != "NEW":
+    if sell_order["order"]["status"] not in ["PENDING_NEW", "FILLED"]:
         try:
+            print("Trying to cancel order: " + buy_order)
             cancel_order(buy_order)
         except errors.CancelOrderError as e:
             print(e)

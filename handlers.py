@@ -15,11 +15,13 @@ def market_data_handler(message):
             order_details = process_transaction(**order_instructions)
             print(f"----------Orden de compra: {0}----------\n----------Order de venta: {1}----------",
             order_details["buyOrder"], order_details["sellOrder"])
-        print("---------------------------------------------------------------------------------------")
     except errors.ProcessOrderError as e:
         print("Error processing order:", e)
+    finally:
+        print("---------------------------------------------------------------------------------------")
 def order_report_handler(message):
     print("Order Report Message Received: {0}".format(message))
+    print("---------------------------------------------------------------------------------------")
 def error_handler(message):
     print("Error Message Received: {0}".format(message))
 def exception_handler(e):
