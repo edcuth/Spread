@@ -2,17 +2,6 @@ import pyRofex
 import handlers
 from config import settings
 
-"""
-CURRENTLY WORKING ON:
-    orders.py
-
-TO-DO:
-    - fixing logic flaw in operations.py:
-        - size of contract is not correct => seems to be fine
-    - move repeated code to a helper function
-"""
-
-
 # Instruments to subscribe
 instruments = ['SOJ.ROS/MAY22', 
             'SOJ.MIN/MAY22', 

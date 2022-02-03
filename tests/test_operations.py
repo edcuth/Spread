@@ -1,4 +1,3 @@
-from base64 import decode
 import pytest
 import operations
 

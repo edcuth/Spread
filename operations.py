@@ -1,4 +1,3 @@
-from cmath import log
 import config, errors
 
 # This module has it's own test suit, 
@@ -116,7 +115,7 @@ def update_prices(new_map, map_to_update):
         values = compare_messages(new_map, map_to_update)
         if values != None:
             # Print the updated price, the difference with the counter instrument, and the volume available to operate while keeping a neutral position
-            print('Update for{}({})\nOld price: {} => New price: {}\nPrice difference with {}: {}\nOld Size: {} => New Size: {}\nQuantity of contracts available to operate:\nBuy {} | Sell {} | Tons {}'.format(
+            print('Update for {}({})\nOld price: {} => New price: {}\nPrice difference with {}: {}\nOld Size: {} => New Size: {}\nQuantity of contracts available to operate:\nBuy {} | Sell {} | Tons {}'.format(
             new_map["instrumentId"]["symbol"], # instrument name
             values["update_side"], # OF or BI
             map_to_update[new_map["instrumentId"]["symbol"]]["marketData"][values["update_side"]][0]["price"], # previous price

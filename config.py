@@ -1,5 +1,4 @@
 from pydantic import BaseSettings
-from typing import List
 
 class Settings(BaseSettings):
     # Configs the parameters to initialize the environment
